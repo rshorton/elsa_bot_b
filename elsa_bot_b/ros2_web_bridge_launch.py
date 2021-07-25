@@ -10,6 +10,7 @@ def main(args=None):
     rclpy.init(args=args)
 
     print("Running ros2 web bridge")
+    # Fix install of rosbridge.js
     p = subprocess.run(['node', '/home/ubuntu/ros2-web-bridge/bin/rosbridge.js'])
 
     rclpy.spin(depthai_publisher)
