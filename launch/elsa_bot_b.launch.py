@@ -45,7 +45,6 @@ def generate_launch_description():
            os.path.join(get_package_share_directory('create_bringup'), 'launch', 'create_2.launch.py'))
     )
 
-    # web bridge (for proxying topics/actions to/from ros_web based applications)
     pose_pub = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
            os.path.join(get_package_share_directory('robot_pose_publisher'), 'launch', 'robot_pose_publisher.launch.py'))
@@ -61,6 +60,7 @@ def generate_launch_description():
                           'params_file': params_file}.items()
     )
 
+    # web bridge (for proxying topics/actions to/from ros_web based applications)
     # ROS2 web bridge - run a bash script to run the nodejs based process
     web_bridge = Node(
         package='elsa_bot_b',
